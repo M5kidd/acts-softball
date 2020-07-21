@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+
+  <ul id="navContainer">
+    <li routerLink=""><a class="navigation">ACTS - Absolute Christian Truth Softball</a></li>
+    <li *ngIf="isAuth" (click)="onLogout()" class=""><a class="navigation">Logout</a></li>
+    <li routerLink="/missions"><a class="navigation">Missions</a></li>
+    <li routerLink="/about"><a class="navigation">About ACTS</a></li>
+    <li routerLink="/contact"><a class="navigation">Contact Us</a></li>
+  </ul>
+  <div class="smallScreen">
+    <a routerLink="" class="navigation">ACTS</a>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <!-- <mat-toolbar-row class="spacer"></mat-toolbar-row> -->
+  <!-- <div *ngIf="auth.afAuth.authState | async as user; else showLogin"></div>
+    <span>Hello {{ user.displayName }}</span>
+    <button mat-button>Logout</button> -->
+</mat-toolbar>
