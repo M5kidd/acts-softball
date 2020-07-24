@@ -1,3 +1,4 @@
+import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,26 +8,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 import { NavbarComponent } from './navigation/navbar/navbar.component';
-import { AnnouncementsModule } from './announcements/announcements.module';
-import { MissionsModule } from './missions/missions.module';
-import { AboutModule } from './about/about.module';
-import { ContactModule } from './contact/contact.module';
+// import { DashboardModule } from './announcements/dashboard/dashboard.module';
+import { AnnouncementsComponent } from './announcements/listPage/announcement.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
+    AnnouncementsComponent,
     AppComponent,
     SidenavComponent,
     NavbarComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    SharedModule,
-    AnnouncementsModule,
-    MissionsModule,
-    AboutModule,
-    ContactModule
+    // DashboardModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

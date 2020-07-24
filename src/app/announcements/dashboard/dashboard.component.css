@@ -1,0 +1,25 @@
+article {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  margin-top: 15px;
+  /* justify-content: center;
+  align-content: center; */
+}
+
+mat-card {
+  grid-column: 2 / 3;
+}
+
+.create-article {
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgPreview {
+  max-width: 250px;
+}
+
+button {
+  width: min-content;
+}

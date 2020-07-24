@@ -1,0 +1,31 @@
+#container {
+  display: grid;
+  grid-template-columns: 1fr minmax(100px, 75vw) 1fr;
+  width: 100vw;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.fa {
+  font-size: 30px;
+  text-decoration: none;
+  color: rgb(252, 19, 174);
+}
+
+.fa:hover {
+  color: black;
+}
+
+mat-card {
+  border: solid black 1px;
+  grid-column: 2 / 3;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+mat-card-title {
+  padding-bottom: 20px;
+}

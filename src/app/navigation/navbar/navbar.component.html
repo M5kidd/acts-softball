@@ -2,10 +2,11 @@
 
   <ul id="navContainer">
     <li routerLink=""><a class="navigation">ACTS - Absolute Christian Truth Softball</a></li>
+    <li *ngIf="isAuth" routerLink="/dashboard"><a class="navigation">New Announcement</a></li>
     <li *ngIf="isAuth" (click)="onLogout()" class=""><a class="navigation">Logout</a></li>
-    <li routerLink="/missions"><a class="navigation">Missions</a></li>
-    <li routerLink="/about"><a class="navigation">About ACTS</a></li>
-    <li routerLink="/contact"><a class="navigation">Contact Us</a></li>
+    <li *ngIf="!isAuth" routerLink="/missions"><a class="navigation">Missions</a></li>
+    <li *ngIf="!isAuth" routerLink="/about"><a class="navigation">About ACTS</a></li>
+    <li *ngIf="!isAuth" routerLink="/contact"><a class="navigation">Contact Us</a></li>
   </ul>
   <div class="smallScreen">
     <a routerLink="" class="navigation">ACTS</a>

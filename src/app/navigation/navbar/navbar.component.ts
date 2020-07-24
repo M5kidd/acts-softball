@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  isAuth = false;
+  isAuth = true;
   @Output() sidenavToggle = new EventEmitter<void>();
 
   constructor() { }

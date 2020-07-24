@@ -1,0 +1,33 @@
+<article>
+
+  <mat-card>
+    <form class="create-article" #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <mat-form-field>
+        <mat-label>Announcement Title</mat-label>
+        <input matInput placeholder="Name your announcement" ngModel name="title" required>
+      </mat-form-field>
+
+      <div>
+        <input type="file" class="file-input" (change)="onUpload($event)" accept="image/*">
+      </div>
+      <mat-hint>For consistency aim for square images!</mat-hint>
+      <div *ngIf="uploadPercent">
+        <h3>Uploads</h3>
+        <mat-progress-bar *ngIf="uploadPercent | async as pct" mode="determinate" [value]="pct"></mat-progress-bar>
+      </div>
+      <div *ngIf="downloadURL">
+        <h3>Results!</h3>
+        <img class="imgPreview" [src]="downloadURL">
+      </div>
+
+      <mat-form-field>
+        <mat-label>Content</mat-label>
+        <textarea matInput rows="6" placeholder="Type your article here" ngModel name="content" required></textarea>
+      </mat-form-field>
+      <mat-card-actions>
+        <button mat-raised-button color="accent" type="submit" [disabled]="f.invalid">Create Post</button>
+        <!-- <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button> -->
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</article>

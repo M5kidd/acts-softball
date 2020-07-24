@@ -16,11 +16,9 @@
   cursor: pointer;
 }
 
-/* li:focus {
-  display: none;
-  border: none;
-  cursor: pointer;
-} */
+li:focus {
+  outline: none;
+}
 
 .smallScreen {
   width: 100vw;

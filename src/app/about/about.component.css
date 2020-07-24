@@ -1,0 +1,18 @@
+#container {
+  display: grid;
+  grid-template-columns: 1fr minmax(100px, 75vw) 1fr;
+  width: 100vw;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+mat-card {
+  border: solid black 1px;
+  grid-column: 2 / 3;
+  min-height: 70vh;
+}
+
+mat-card-title {
+  text-align: center;
+  padding: 20px;
+}

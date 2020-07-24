@@ -1,0 +1,16 @@
+<section id="container">
+  <div class="contents">
+    <h3>Welcome to the ACTS Website!</h3>
+    <h4><u>Announcements</u></h4>
+    <mat-card *ngFor="let article of posts">
+      <img mat-card-image [src]="article.img" [alt]="article.title">
+      <div class="postDetails">
+        <div>
+          <mat-card-title>{{ article.title }}</mat-card-title>
+          <mat-card-subtitle>{{ article.date | date }}</mat-card-subtitle>
+        </div>
+        <mat-card-content>{{ article.content }}</mat-card-content>
+      </div>
+    </mat-card>
+  </div>
+</section>
