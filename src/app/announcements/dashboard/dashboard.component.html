@@ -1,12 +1,10 @@
 <article>
-
   <mat-card>
     <form class="create-article" #f="ngForm" (ngSubmit)="onSubmit(f)">
       <mat-form-field>
         <mat-label>Announcement Title</mat-label>
         <input matInput placeholder="Name your announcement" ngModel name="title" required>
       </mat-form-field>
-
       <div>
         <input type="file" class="file-input" (change)="onUpload($event)" accept="image/*">
       </div>
@@ -19,7 +17,6 @@
         <h3>Results!</h3>
         <img class="imgPreview" [src]="downloadURL">
       </div>
-
       <mat-form-field>
         <mat-label>Content</mat-label>
         <textarea matInput rows="6" placeholder="Type your article here" ngModel name="content" required></textarea>

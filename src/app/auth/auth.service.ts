@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { AuthData } from './auth-data.model';
 
@@ -7,9 +9,27 @@ import { AuthData } from './auth-data.model';
   providedIn: 'root'
 })
 export class AuthService {
-  // isAuthenticated = false;
+  authChange = new Subject<boolean>();
+  isAuthenticated = false;
+  public userId: string;
 
-  constructor(private afAuth: AngularFireAuth) { }
+  constructor(private afAuth: AngularFireAuth, private router: Router) { }
+
+  initAuthListener(): void {
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        this.userId = user.uid;
+        this.isAuthenticated = true;
+        this.authChange.next(true);
+        this.router.navigate(['/dashboard']);
+      } else {
+        // console.log('my else user ran ' + user);
+        this.authChange.next(false);
+        // this.router.navigate(['']);
+        this.isAuthenticated = false;
+      }
+    });
+  }
 
   login(authData: AuthData): void {
     this.afAuth.signInWithEmailAndPassword(
@@ -30,4 +50,12 @@ export class AuthService {
   // private authSuccessfully(): boolean {
   //   return this.isAuthenticated;
   // }
+
+  logout(): void {
+    this.afAuth.signOut();
+  }
+
+  isAuth(): boolean {
+    return this.isAuthenticated;
+  }
 }
