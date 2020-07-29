@@ -1,16 +1,46 @@
 <section id="container">
   <div class="contents">
-    <h3>Welcome to the ACTS Website!</h3>
-    <h4><u>Announcements</u></h4>
-    <mat-card *ngFor="let article of posts">
-      <img mat-card-image [src]="article.img" [alt]="article.title">
-      <div class="postDetails">
-        <div>
-          <mat-card-title>{{ article.title }}</mat-card-title>
-          <mat-card-subtitle>{{ article.date | date }}</mat-card-subtitle>
+    <h2>Welcome to the ACTS Website!</h2>
+    <h2 class="blackText"><u>Announcements</u></h2>
+    <div *ngFor="let article of posts">
+      <mat-card *ngIf="!editingMode" class="myCard">
+        <img [src]="article.img" [alt]="article.title">
+        <div class="postDetails">
+          <div>
+            <mat-card-title>{{ article.title }}</mat-card-title>
+            <mat-card-subtitle>{{ article.date | date }}</mat-card-subtitle>
+          </div>
+          <mat-card-content>{{ article.content }}</mat-card-content>
+          <mat-card-actions *ngIf="this.authService.userId === 'EnlYfY9b1FhWPNKqYpuD26nUGkW2'">
+            <button mat-button>
+              <mat-icon aria-hidden="false" aria-label="Example home icon" color="warn" (click)="onDelete(article)">delete</mat-icon>
+            </button>
+            <button mat-button>
+              <mat-icon aria-hidden="false" aria-label="Example home icon" color="accent" (click)="onEdit(article)">edit</mat-icon>
+            </button>
+          </mat-card-actions>
         </div>
-        <mat-card-content>{{ article.content }}</mat-card-content>
-      </div>
-    </mat-card>
+      </mat-card>
+    </div>
+        <div *ngIf="editingMode">
+
+          <h1>Edit Mode!</h1>
+          <mat-card>
+            <form #f="ngForm" (ngSubmit)="updatePost(f)" class="edit-article">
+              <mat-form-field>
+                <mat-label>Article Title</mat-label>
+                <input matInput placeholder="Name your article" [(ngModel)]="post.title" name="title" required>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Content</mat-label>
+                <textarea matInput rows="6" placeholder="Type your article here" [(ngModel)]="post.content" name="content" required></textarea>
+              </mat-form-field>
+              <mat-card-actions>
+                <button mat-raised-button color="accent" type="submit" [disabled]="f.invalid">Save</button>
+                <button mat-raised-button color="primary" type="button" (click)="editingMode = false">Cancel</button>
+              </mat-card-actions>
+            </form>
+          </mat-card>
+        </div>
   </div>
 </section>

@@ -36,11 +36,10 @@ export class AuthService {
       authData.email,
       authData.password
     ).then(result => {
-      console.log('success: ' + result);
       // this.uiService.loadingStateChanged.next(false);
     }
     ).catch(error => {
-      console.log('error: ' + error);
+      alert('Email or Password is incorrect!');
 
       // this.uiService.loadingStateChanged.next(false);
       // this.uiService.showSnackBar(error.message, null, 3000);

@@ -1,7 +1,8 @@
 <mat-toolbar color="primary">
 
   <ul id="navContainer">
-    <li routerLink=""><a class="navigation">ACTS - Absolute Christian Truth Softball</a></li>
+    <li routerLink=""><a class="navigation">ACTS</a></li>
+    <!-- <li routerLink="" class="medScreen"><a class="navigation">ACTS</a></li> -->
     <li *ngIf="isAuth" routerLink="/dashboard"><a class="navigation">New Announcement</a></li>
     <li *ngIf="isAuth" (click)="onLogout()" class=""><a class="navigation">Logout</a></li>
     <li *ngIf="!isAuth" routerLink="/missions"><a class="navigation">Missions</a></li>

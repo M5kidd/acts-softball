@@ -1,26 +1,27 @@
 #container {
   display: grid;
-  grid-template-columns: 1fr minmax(100px, 75vw) 1fr;
-  width: 100vw;
-  margin-top: 20px;
+  grid-template-columns: 1fr 80vw 1fr;
+  width: 98vw;
   justify-content: center;
   text-align: center;
+}
+
+h2 {
+  color: #f50057;
 }
 
 .contents {
   grid-column: 2 / 3;
 }
 
-mat-card {
-  border: 2px solid cyan;
-  border-radius: 10px;
-  /* max-height: 200px; */
+.myCard {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  height: 100%;
-  /* padding: 0px; */
-  /* flex-wrap: wrap; */
-  /* align-items: center; */
+  margin: 10px 0px;
+  border: 2px solid white;
+  border-radius: 15px;
+  min-height: 200px;
+  background-color: #1df2fd;
 }
 
 .postDetails {
@@ -28,3 +29,28 @@ mat-card {
   flex-direction: column;
   justify-content: space-evenly;
 }
+
+img {
+  max-height: 200px;
+  width: auto;
+  border-radius: 15px;
+}
+
+.edit-article {
+  display: flex;
+  flex-direction: column;
+}
+
+.blackText {
+  color: black;
+}
+
+@media (max-width: 620px) {
+  .myCard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+

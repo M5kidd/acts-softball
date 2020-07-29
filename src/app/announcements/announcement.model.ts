@@ -3,4 +3,5 @@ export class Announcement {
   title: string;
   date: Date;
   content: string;
+  id?: string;
 }

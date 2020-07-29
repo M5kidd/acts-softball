@@ -1,6 +1,6 @@
 #navContainer {
   list-style: none;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-evenly;
   /* color: rgb(252, 19, 174); */

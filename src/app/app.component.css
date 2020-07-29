@@ -5,3 +5,36 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
 mat-sidenav {
   width: 75vw;
 }
+
+main {
+  background-color: #43DDE6;
+}
+
+footer {
+  background-color: #18FFFF;
+  height: 64px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  /* color: accent; */
+}
+
+p {
+  color: #bd0344;
+  padding: 0px 15px;
+}
+
+a {
+  color: #bd0344;
+
+}
+
+a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.contactUs {
+  display: flex;
+  justify-content: space-evenly;
+}
