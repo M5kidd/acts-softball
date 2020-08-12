@@ -21,12 +21,12 @@ footer {
 }
 
 p {
-  color: #bd0344;
+  color: rgb(252, 19, 174);
   padding: 0px 15px;
 }
 
 a {
-  color: #bd0344;
+  color: rgb(252, 19, 174);
 
 }
 
@@ -37,4 +37,10 @@ a:hover {
 .contactUs {
   display: flex;
   justify-content: space-evenly;
+}
+
+.fa {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(252, 19, 174);
 }

@@ -1,8 +1,9 @@
 <section id="container">
-  <mat-card>
-    <mat-card-title>Missions</mat-card-title>
+  <mat-card *ngIf="missions | async as loadedContent">
+    <mat-card-title>{{ loadedContent.title }}</mat-card-title>
     <mat-card-content>
-      <p>Content to go here...</p>
+      <!-- <p>Content to go here...</p> -->
+      <p [innerHTML]="returnHtmlFromRichText(loadedContent.contentOfPage)"></p>
     </mat-card-content>
     <mat-card-actions>
       <div>

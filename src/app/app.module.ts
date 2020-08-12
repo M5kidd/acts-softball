@@ -17,13 +17,13 @@ import { AnnouncementsComponent } from './announcements/listPage/announcement.co
     AnnouncementsComponent,
     AppComponent,
     SidenavComponent,
-    NavbarComponent,
+    NavbarComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
     BrowserAnimationsModule,
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     FormsModule,
     SharedModule
   ],
